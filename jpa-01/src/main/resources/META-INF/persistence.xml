@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             version="3.0"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence
+             https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+
+    <persistence-unit name="jpabegin" transaction-type="RESOURCE_LOCAL">
+        <class>jpabasic.reserve.domain.User</class>
+
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver"
+                      value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url"
+                      value="jdbc:mysql://localhost/jpabegin?characterEncoding=utf8"/>
+            <property name="jakarta.persistence.jdbc.user" value="jpauser"/>
+            <property name="jakarta.persistence.jdbc.password"
+                      value="jpapass"/>
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="none"/>
+
+            <property name="hibernate.hikari.poolName" value="jpabasic"/>
+            <property name="hibernate.hikari.maximumPoolSize" value="10"/>
+            <property name="hibernate.hikari.minimumIdle" value="10"/>
+            <property name="hibernate.hikari.connectionTimeout" value="1000"/> <!-- 1s -->
+            <property name="hibernate.hikari.maxLifetime" value="600000"/> <!-- 10m -->
+        </properties>
+
+    </persistence-unit>
+
+</persistence>
