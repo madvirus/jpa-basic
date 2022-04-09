@@ -1,14 +1,11 @@
 package main;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.EntityTransaction;
-import jakarta.persistence.Persistence;
+import jakarta.persistence.*;
 import jpabasic.reserve.domain.User;
 
 import java.time.LocalDateTime;
 
-public class UserMain {
+public class UserSaveMain {
     public static void main(String[] args) {
         EntityManagerFactory emf =
                 Persistence.createEntityManagerFactory("jpabegin");

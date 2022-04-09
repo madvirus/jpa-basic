@@ -11,13 +11,13 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <hiberate.version>5.6.7.Final</hiberate.version>
+        <hiberate.version>6.0.0.Final</hiberate.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core-jakarta</artifactId>
+            <artifactId>hibernate-core</artifactId>
             <version>${hiberate.version}</version>
         </dependency>
         <dependency>
@@ -28,17 +28,12 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.27</version>
+            <version>8.0.28</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.2.6</version>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.32</version>
+            <version>1.2.11</version>
         </dependency>
     </dependencies>
 
