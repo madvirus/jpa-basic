@@ -21,8 +21,10 @@ public class Main {
     public static void main(String[] args) throws IOException {
         EMF.init();
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
+            while (true) {
+                System.out.println("명령어를 입력하세요:");
+                String line = reader.readLine();
+                if (line == null) break;
                 if (line.startsWith("new ")) {
                     handleNew(line);
                 } else if (line.startsWith("get ")) {
@@ -74,7 +76,7 @@ public class Main {
     }
 
     private static void handleRemove(String line) {
-        String email = line.substring(4);
+        String email = line.substring(7);
         try {
             removeUserService.removeUser(email);
             logger.info("사용자 삭제함: {}", email);
