@@ -3,7 +3,6 @@ package jpabasic.reserve.domain;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Entity
 @Table(name = "hotel_info")
@@ -20,8 +19,7 @@ public class Hotel {
     @Enumerated(EnumType.STRING)
     private Grade grade;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date created;
+    private LocalDateTime created;
 
     @Column(name = "modified")
     private LocalDateTime lastModified;
@@ -34,7 +32,7 @@ public class Hotel {
         this.name = name;
         this.year = year;
         this.grade = grade;
-        this.created = new Date();
+        this.created = LocalDateTime.now();
         this.lastModified = LocalDateTime.now();
     }
 
@@ -54,7 +52,7 @@ public class Hotel {
         return grade;
     }
 
-    public Date getCreated() {
+    public LocalDateTime getCreated() {
         return created;
     }
 
