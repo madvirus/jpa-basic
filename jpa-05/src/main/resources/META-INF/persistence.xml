@@ -9,6 +9,7 @@
     <persistence-unit name="jpabegin" transaction-type="RESOURCE_LOCAL">
         <class>jpabasic.reserve.domain.Hotel</class>
         <class>jpabasic.reserve.domain.Review</class>
+        <class>jpabasic.reserve.domain.AccessLog</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
@@ -18,6 +19,24 @@
             <property name="jakarta.persistence.jdbc.password" value="jpapass"/>
 
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <property name="hibernate.hikari.poolName" value="pool"/>
+            <property name="hibernate.hikari.maximumPoolSize" value="10"/>
+            <property name="hibernate.hikari.minimumIdle" value="10"/>
+            <property name="hibernate.hikari.connectionTimeout" value="1000"/> <!-- 1s -->
+        </properties>
+    </persistence-unit>
+
+    <persistence-unit name="oracle" transaction-type="RESOURCE_LOCAL">
+        <class>jpabasic.reserve.domain.ActivityLog</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+            <property name="jakarta.persistence.jdbc.url"
+                      value="jdbc:oracle:thin:@localhost:1521:xe"/>
+            <property name="jakarta.persistence.jdbc.user" value="localuser"/>
+            <property name="jakarta.persistence.jdbc.password" value="localpass"/>
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.OracleDialect"/>
             <property name="hibernate.hikari.poolName" value="pool"/>
             <property name="hibernate.hikari.maximumPoolSize" value="10"/>
             <property name="hibernate.hikari.minimumIdle" value="10"/>

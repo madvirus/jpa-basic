@@ -15,3 +15,14 @@ create table jpabegin.review (
   `comment` text,
   created datetime
 ) engine innodb character set utf8mb4;
+
+create table jpabegin.access_log (
+  id integer not null,
+  path varchar(200),
+  accessed datetime
+) engine innodb character set utf8mb4;
+
+create table id_seq (
+    entity varchar(100) not null primary key,
+    nextval bigint
+) engine innodb character set utf8mb4;

@@ -1,8 +1,6 @@
 package jpabasic.reserve.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
@@ -10,6 +8,7 @@ import java.time.LocalDateTime;
 public class Review {
     @Id
     @Column(name = "review_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "hotel_id")
     private String hotelId;
@@ -22,14 +21,12 @@ public class Review {
     protected Review() {
     }
 
-    public Review(int mark,
-                  String writerName,
-                  String comment,
-                  LocalDateTime created) {
+    public Review(int mark, String hotelId, String writerName, String comment) {
         this.mark = mark;
+        this.hotelId = hotelId;
         this.writerName = writerName;
         this.comment = comment;
-        this.created = created;
+        this.created = LocalDateTime.now();
     }
 
     public Long getId() {
