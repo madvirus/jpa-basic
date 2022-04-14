@@ -27,7 +27,8 @@ public class MainSequence {
         } catch (Exception e) {
             tx.rollback();
         } finally {
-            EMFOracle.close();
+            em.close();
         }
+        EMFOracle.close();
     }
 }

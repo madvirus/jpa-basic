@@ -27,7 +27,8 @@ public class MainNative {
         } catch (Exception ex) {
             tx.rollback();
         } finally {
-            EMF.close();
+            em.close();
         }
+        EMF.close();
     }
 }

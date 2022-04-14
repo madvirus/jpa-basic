@@ -30,7 +30,8 @@ public class MainTableGenId {
         } catch (Exception e) {
             tx.rollback();
         } finally {
-            EMF.close();
+            em.close();
         }
+        EMF.close();
     }
 }
