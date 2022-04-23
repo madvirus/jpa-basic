@@ -2,6 +2,7 @@ package jpabasic.question.domain;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -18,7 +19,7 @@ public class Question {
     )
     @OrderColumn(name = "idx")
     @Column(name = "text")
-    private List<String> choices;
+    private List<String> choices = new ArrayList<>();
 
     protected Question() {}
 
