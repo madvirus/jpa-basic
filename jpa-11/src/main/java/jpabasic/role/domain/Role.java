@@ -12,7 +12,7 @@ public class Role {
     private String id;
     private String name;
 
-    @ElementCollection //(fetch = FetchType.EAGER)
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(
             name = "role_perm",
             joinColumns = @JoinColumn(name = "role_id")

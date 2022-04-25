@@ -90,7 +90,7 @@ public class Main11 {
         try {
             tx.begin();
             TypedQuery<Role> query = em.createQuery(
-                    "select r from Role r join fetch r.permissions where r.name like :name order by r.id", Role.class);
+                    "select r from Role r left join fetch r.permissions where r.name like :name order by r.id", Role.class);
             query.setParameter("name", "name%");
             query.setFirstResult(6);
             query.setMaxResults(3);
