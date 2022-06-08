@@ -27,6 +27,7 @@
 ## Spring Data JPA 기초 내용
 
 * Spring Data JPA 01 시작하기: https://youtu.be/1Q3Qtd5HZy4
+* Spring Data JPA 02 리포지터리 메서드 작성 규칙: https://youtu.be/qTiHaxVc6GY
 
 ## 로컬 환경 구성
 
